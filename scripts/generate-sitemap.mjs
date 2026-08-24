@@ -23,7 +23,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SITEMAP = join(ROOT, 'sitemap.xml');
-const SITE_ORIGIN = 'https://flits.cc';
+const SITE_ORIGIN = 'https://flits.so';
 
 /** Directories never scanned for pages. */
 const IGNORED_DIRS = new Set(['.git', '.github', 'node_modules', 'assets', 'scripts']);

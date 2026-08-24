@@ -4,8 +4,20 @@
   "redirects": [
     {
       "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.flits.so" }],
+      "destination": "https://flits.so/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "flits.cc" }],
+      "destination": "https://flits.so/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "www.flits.cc" }],
-      "destination": "https://flits.cc/:path*",
+      "destination": "https://flits.so/:path*",
       "permanent": true
     },
     { "source": "/pages/:path*", "destination": "/:path*", "permanent": true },
