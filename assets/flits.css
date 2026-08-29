@@ -32,6 +32,23 @@
   --math-fg: #ededed;
   --footer-link: #d4d4d4;
 
+  /* accent shapes: the one place colour is allowed to touch the canvas.
+     Same six hues as the gradient art, so a page and the art on it agree.
+     These are the pale end of each hue, because on black the tint is
+     multiplied down towards the canvas; the light block below swaps in the
+     saturated end, which is what a white canvas needs instead. */
+  --shape-blue: #7fc4ff;
+  --shape-teal: #86efce;
+  --shape-violet: #b6a6ff;
+  --shape-amber: #ffcd7a;
+  --shape-pink: #ffb4c8;
+  --shape-slate: #b7c2d6;
+
+  /* Ceiling, not a preference: past this the muted grey of a lede stops
+     clearing 4.5:1 against the tint it sits on. */
+  --shape-alpha: 0.28;
+  --shape-blur: 36px;
+
   /* the wordmark PNG is white artwork; flip it on a light canvas */
   --logo-filter: none;
 
@@ -67,6 +84,17 @@
     --prose-fg: #1c1c1c;
     --math-fg: #111111;
     --footer-link: #3a3a3a;
+
+    /* On white the tint is blended towards the canvas instead, so the pale
+       end of each hue would wash out to nothing. Same ceiling, same reason. */
+    --shape-blue: #2f7ff0;
+    --shape-teal: #12b892;
+    --shape-violet: #6f5cf0;
+    --shape-amber: #ef8f2c;
+    --shape-pink: #ef6a95;
+    --shape-slate: #6f7d96;
+
+    --shape-alpha: 0.32;
 
     --logo-filter: invert(1);
   }
@@ -835,6 +863,81 @@ a.panel:hover {
 
 @media (min-width: 900px) {
   .banner { aspect-ratio: 21 / 8; }
+}
+
+/* ---------------------------------------------------------------- accent shapes
+
+   One soft colour, bleeding in from the edge of the page and sitting behind
+   the type. Occasional on purpose: a page gets one, a long page gets two far
+   apart, most pages get none, and it only goes where a stretch of the page is
+   otherwise plain type.
+
+   Decorative and nothing else. The element holds no content, is hidden from
+   assistive technology at the call site, never takes a pointer event, and no
+   layout depends on it. Remove the span and the page is unchanged.
+
+   How it stays behind the words: the section isolates itself, so the shape
+   can sit at z-index -1. That paints it above the section's own background
+   and below every word in it, without touching the content markup. */
+
+.shape-field {
+  position: relative;
+  isolation: isolate;
+}
+
+/* A shape is meant to run off the side of the window; it is not meant to make
+   the document wider than the window, which on a phone costs the reader a
+   zoomed-out page. Clipping here rather than on the section itself is what
+   keeps the cut at the edge of the window instead of at the edge of the text
+   column, which on a wide screen are not the same place. Horizontal only:
+   running past the top and bottom of its section is the point. */
+main { overflow-x: clip; }
+
+.shape {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: var(--shape-w, clamp(280px, 46vw, 540px));
+  aspect-ratio: 1 / 1.04;
+  /* The uneven radius is the whole trick: it stops it reading as a circle. */
+  border-radius: 62% 38% 41% 59% / 47% 57% 43% 53%;
+  background: var(--shape-tint, var(--shape-violet));
+  opacity: var(--shape-alpha);
+  filter: blur(var(--shape-blur));
+}
+
+/* A second silhouette, so two shapes on one page are not the same shape. */
+.shape--b { border-radius: 39% 61% 57% 43% / 56% 44% 56% 44%; }
+
+/* Placement. Both variants measure from the middle of the section, which is
+   also the middle of the viewport, so the shape meets the edge of the window
+   rather than the edge of the text column. --shape-y sets where its centre
+   falls: a length reads from the top of the section, a percentage scales
+   with it. */
+
+.shape--start {
+  top: var(--shape-y, 50%);
+  left: 50%;
+  transform: translate(calc(-50vw - 25%), -50%);
+}
+
+.shape--end {
+  top: var(--shape-y, 50%);
+  left: 50%;
+  transform: translate(calc(50vw - 75%), -50%);
+}
+
+.shape--blue { --shape-tint: var(--shape-blue); }
+.shape--teal { --shape-tint: var(--shape-teal); }
+.shape--violet { --shape-tint: var(--shape-violet); }
+.shape--amber { --shape-tint: var(--shape-amber); }
+.shape--pink { --shape-tint: var(--shape-pink); }
+.shape--slate { --shape-tint: var(--shape-slate); }
+
+/* In a forced palette the tint is not the author's to give, and a blurred
+   block of colour behind text is the one thing that mode exists to remove. */
+@media (forced-colors: active) {
+  .shape { display: none; }
 }
 
 /* ---------------------------------------------------------------- feature split */
