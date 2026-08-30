@@ -913,6 +913,9 @@ a.panel:hover {
   position: relative;
   margin-top: auto;
   height: clamp(160px, 21vw, 200px);
+  /* Decoration only, and the glow below reaches up over the button on any
+     card whose facts wrap to a third line. Nothing in here takes a tap. */
+  pointer-events: none;
 }
 
 .product__shot::before {
