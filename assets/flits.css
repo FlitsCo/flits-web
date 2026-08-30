@@ -1234,6 +1234,19 @@ pre.code {
   color: var(--faint);
 }
 
+/* ---------------------------------------------------------------- aside link */
+
+/* Deliberately quiet: a personal-site pointer, not a call to action. */
+.aside-link {
+  margin-top: 28px;
+  font-size: 0.8125rem;
+  color: var(--faint);
+}
+
+.aside-link a { text-decoration: none; border-bottom: 1px solid var(--line-soft); }
+
+.aside-link a:hover { color: var(--muted); }
+
 /* ---------------------------------------------------------------- article */
 
 .article-meta {
