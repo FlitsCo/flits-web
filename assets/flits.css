@@ -730,6 +730,224 @@ a.panel:hover {
   text-wrap: pretty;
 }
 
+/* ---------------------------------------------------------------- product cards */
+
+/* One card per product, each carrying its own palette. These are the only
+   blocks on the site that do not follow the light/dark tokens: a product's
+   colour is the product's, not the page's, so the pair is set locally and
+   holds in both schemes. Every derived value (dimmed copy, rules, button
+   wash) is mixed from that pair, so a new product needs two hex codes and
+   nothing else. */
+
+/* The same mechanics as .rail, kept separate because this one never collapses
+   into rows: a product card is tall and the artwork bleeds off its bottom
+   edge, so a stacked grid of them turns the section into a wall. It stays a
+   horizontal scroller at every width, and the track is always cut off before
+   the last card so the scroll is visible without a scrollbar. */
+.products {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 86%;
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  padding-inline: var(--gutter);
+  margin-inline: calc(-1 * var(--gutter));
+  scrollbar-width: none;
+}
+
+.products::-webkit-scrollbar { display: none; }
+
+.products > * { scroll-snap-align: start; }
+
+@media (min-width: 600px) {
+  .products { grid-auto-columns: 62%; }
+}
+
+@media (min-width: 1024px) {
+  .products {
+    grid-auto-columns: 46%;
+    gap: 24px;
+  }
+}
+
+.product {
+  --pc-bg: var(--surface);
+  --pc-fg: var(--fg);
+  /* 74% keeps the secondary copy above 4.5:1 on every card below. */
+  --pc-dim: color-mix(in srgb, var(--pc-fg) 74%, var(--pc-bg));
+  --pc-line: color-mix(in srgb, var(--pc-fg) 20%, transparent);
+  --pc-wash: color-mix(in srgb, var(--pc-fg) 9%, transparent);
+  --pc-wash-hover: color-mix(in srgb, var(--pc-fg) 16%, transparent);
+
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 26px;
+  background: var(--pc-bg);
+  color: var(--pc-fg);
+}
+
+.product--looped  { --pc-bg: #e9e1fb; --pc-fg: #241452; }
+.product--bits    { --pc-bg: #ddf0e2; --pc-fg: #0f3520; }
+.product--waterly { --pc-bg: #2b33c4; --pc-fg: #ffffff; --pc-dim: color-mix(in srgb, #ffffff 82%, #2b33c4); }
+.product--next    { --pc-bg: #eceae4; --pc-fg: #1b1a17; }
+
+.product__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: clamp(24px, 3.4vw, 34px) clamp(22px, 3.2vw, 34px) 0;
+}
+
+.product__lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.product__icon {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 23%;
+  box-shadow: inset 0 0 0 1px var(--pc-line);
+}
+
+/* The product name stands in for a wordmark, so it is set like the Flits
+   one: same weight and tracking, scaled up. */
+.product__name {
+  font-size: clamp(1.75rem, 5.6vw, 2.375rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.038em;
+}
+
+.product__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(0.9375rem, 3.4vw, 1rem);
+  letter-spacing: -0.012em;
+}
+
+.product__meta svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+/* The facts read as a short timeline: a rule down the left, a ring per item. */
+.product__facts {
+  display: grid;
+  gap: 12px;
+  margin-left: 8px;
+  padding-left: 26px;
+  border-left: 1px solid var(--pc-line);
+}
+
+.product__facts li {
+  position: relative;
+  font-size: clamp(0.9375rem, 3.4vw, 1rem);
+  line-height: 1.4;
+  letter-spacing: -0.012em;
+  color: var(--pc-dim);
+  text-wrap: pretty;
+}
+
+.product__facts li::before {
+  content: "";
+  position: absolute;
+  left: -29px;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.product__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  margin-top: 4px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: var(--pc-wash);
+  color: inherit;
+  font-size: clamp(0.875rem, 3.3vw, 0.9375rem);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.18s var(--ease), transform 0.18s var(--ease);
+}
+
+.product__cta:hover { background: var(--pc-wash-hover); }
+
+.product__cta:active { transform: scale(0.985); }
+
+.product__cta svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The artwork runs off the bottom edge of the card the way a screenshot
+   would, so the card reads as a window onto the product rather than a box
+   with a picture in it. */
+.product__shot {
+  position: relative;
+  margin-top: auto;
+  height: clamp(160px, 21vw, 200px);
+  /* Decoration only, and the glow below reaches up over the button on any
+     card whose facts wrap to a third line. Nothing in here takes a tap. */
+  pointer-events: none;
+}
+
+.product__shot::before {
+  content: "";
+  position: absolute;
+  inset: -40% -12% 0 20%;
+  background: radial-gradient(58% 74% at 72% 96%, var(--pc-wash-hover), transparent 72%);
+}
+
+.product__shot img {
+  position: absolute;
+  right: clamp(20px, 3vw, 40px);
+  bottom: -13%;
+  width: clamp(160px, 23vw, 232px);
+  height: auto;
+  border-radius: 23%;
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.2), inset 0 0 0 1px var(--pc-line);
+}
+
+/* The last card has no app to show, so the Flits bolt sits in the same place
+   as a watermark. The mark is white artwork; this card is pale. */
+.product__shot--mark img {
+  width: auto;
+  height: clamp(150px, 19vw, 190px);
+  right: clamp(24px, 4vw, 60px);
+  bottom: 4%;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 0.09;
+  filter: invert(1);
+}
+
 /* ---------------------------------------------------------------- hero */
 
 .hero {
