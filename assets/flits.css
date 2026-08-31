@@ -791,6 +791,7 @@ a.panel:hover {
   color: var(--pc-fg);
 }
 
+.product--b2b     { --pc-bg: #f6e7d0; --pc-fg: #3b2410; }
 .product--looped  { --pc-bg: #e9e1fb; --pc-fg: #241452; }
 .product--bits    { --pc-bg: #ddf0e2; --pc-fg: #0f3520; }
 .product--waterly { --pc-bg: #2b33c4; --pc-fg: #ffffff; --pc-dim: color-mix(in srgb, #ffffff 82%, #2b33c4); }
@@ -931,6 +932,20 @@ a.panel:hover {
   bottom: -13%;
   width: clamp(160px, 23vw, 232px);
   height: auto;
+  border-radius: 23%;
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.2), inset 0 0 0 1px var(--pc-line);
+}
+
+/* A line of work rather than one app has no icon to show, so the house
+   gradient takes the slot the icon would occupy and the card still has a
+   face. Same box as the artwork above it. */
+.product__tile {
+  position: absolute;
+  right: clamp(20px, 3vw, 40px);
+  bottom: -13%;
+  width: clamp(160px, 23vw, 232px);
+  aspect-ratio: 1;
+  overflow: hidden;
   border-radius: 23%;
   box-shadow: 0 24px 54px rgba(0, 0, 0, 0.2), inset 0 0 0 1px var(--pc-line);
 }
