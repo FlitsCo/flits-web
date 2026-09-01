@@ -791,7 +791,7 @@ a.panel:hover {
   color: var(--pc-fg);
 }
 
-.product--b2b     { --pc-bg: #f6e7d0; --pc-fg: #3b2410; }
+.product--b2b     { --pc-bg: #dcefee; --pc-fg: #0c3330; }
 .product--looped  { --pc-bg: #e9e1fb; --pc-fg: #241452; }
 .product--bits    { --pc-bg: #ddf0e2; --pc-fg: #0f3520; }
 .product--waterly { --pc-bg: #2b33c4; --pc-fg: #ffffff; --pc-dim: color-mix(in srgb, #ffffff 82%, #2b33c4); }
@@ -926,7 +926,7 @@ a.panel:hover {
   background: radial-gradient(58% 74% at 72% 96%, var(--pc-wash-hover), transparent 72%);
 }
 
-.product__shot img {
+.product__shot > img {
   position: absolute;
   right: clamp(20px, 3vw, 40px);
   bottom: -13%;
@@ -936,23 +936,32 @@ a.panel:hover {
   box-shadow: 0 24px 54px rgba(0, 0, 0, 0.2), inset 0 0 0 1px var(--pc-line);
 }
 
-/* A line of work rather than one app has no icon to show, so the house
-   gradient takes the slot the icon would occupy and the card still has a
-   face. Same box as the artwork above it. */
+/* A line of work rather than one app has no icon of its own, so it gets the
+   Flits bolt on a tile, in the same box and at the same size as the app icons
+   beside it. The artwork is white, so the tile has to stay dark. */
 .product__tile {
   position: absolute;
   right: clamp(20px, 3vw, 40px);
   bottom: -13%;
+  display: grid;
+  place-items: center;
   width: clamp(160px, 23vw, 232px);
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: 23%;
+  background:
+    radial-gradient(88% 78% at 26% 16%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 58%),
+    linear-gradient(150deg, #3fbfae 0%, #126b6b 52%, #05282c 100%);
   box-shadow: 0 24px 54px rgba(0, 0, 0, 0.2), inset 0 0 0 1px var(--pc-line);
 }
 
+/* The glyph nearly fills its square, so it is inset to sit like an app icon
+   rather than touching the corners. */
+.product__tile > img { width: 76%; height: auto; }
+
 /* The last card has no app to show, so the Flits bolt sits in the same place
    as a watermark. The mark is white artwork; this card is pale. */
-.product__shot--mark img {
+.product__shot--mark > img {
   width: auto;
   height: clamp(150px, 19vw, 190px);
   right: clamp(24px, 4vw, 60px);
