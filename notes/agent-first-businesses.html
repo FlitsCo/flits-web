@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Agent-First Businesses · Flits</title>
-<meta name="description" content="Agents made production cheap. In a business built around them the binding constraint is not what they can do, but what a person still has to look at.">
+<meta name="description" content="Agents made producing work cheap. In a business built around them, the limit is not what they can do. It is what a person still has to look at.">
 <link rel="canonical" href="https://flits.so/notes/agent-first-businesses">
 <meta property="og:title" content="Agent-First Businesses · Flits">
-<meta property="og:description" content="Agents made production cheap. In a business built around them the binding constraint is not what they can do, but what a person still has to look at.">
+<meta property="og:description" content="Agents made producing work cheap. In a business built around them, the limit is not what they can do. It is what a person still has to look at.">
 <meta property="og:url" content="https://flits.so/notes/agent-first-businesses">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Flits">
@@ -17,7 +17,7 @@
 <meta property="og:image:alt" content="Flits, a software lab. Building the companies that agents make possible.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Agent-First Businesses · Flits">
-<meta name="twitter:description" content="Agents made production cheap. In a business built around them the binding constraint is not what they can do, but what a person still has to look at.">
+<meta name="twitter:description" content="Agents made producing work cheap. In a business built around them, the limit is not what they can do. It is what a person still has to look at.">
 <meta name="twitter:image" content="https://flits.so/assets/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@
       "@type": "BlogPosting",
       "headline": "Agent-First Businesses",
       "datePublished": "2026-08-01",
-      "description": "Agents made production cheap. In a business built around them the binding constraint is not what they can do, but what a person still has to look at.",
+      "description": "Agents made producing work cheap. In a business built around them, the limit is not what they can do. It is what a person still has to look at.",
       "url": "https://flits.so/notes/agent-first-businesses",
       "mainEntityOfPage": "https://flits.so/notes/agent-first-businesses",
       "author": {
@@ -125,7 +125,7 @@
     <div class="page-hero__inner">
       <p class="eyebrow"><strong>Note</strong> <span>August 2026</span></p>
       <h1 class="h1">Agent-First Businesses</h1>
-      <p class="lede">Agents made production cheap. In a business built around them the binding constraint is not what they can do, but what a person still has to look at.</p>
+      <p class="lede">Agents made producing work cheap. In a business built around them, the limit is not what they can do. It is what a person still has to look at.</p>
     </div>
   </section>
 
@@ -139,43 +139,43 @@
 
   <section class="wrap section--tight">
   <article class="prose">
-    <p>“Agent-first” usually gets used to mean a company where software does the work. It is also the least interesting part. What agents can do is a capability question, and capability is improving on its own schedule without our help. The design question, the one that decides whether such a business holds together, is narrower: what does a person still have to look at, and how often?</p>
-    <p>The useful observation is that the constraint does not disappear when production becomes cheap. It relocates. A business arranged around where it relocates to is agent-first. A business arranged only around the cheap production ends up with an expensive queue.</p>
+    <p>“Agent-first” usually means a company where software does the work, which is the least interesting part of it. What agents can do keeps improving on its own, without our help. The question that actually decides whether a business like this holds together is narrower: what does a person still have to look at, and how often?</p>
+    <p>The useful point is that the bottleneck doesn't disappear when producing work gets cheap. It moves. A business organised around where it moves to is agent-first. A business organised only around the cheap production ends up with an expensive queue.</p>
 
     <h2>The bottleneck moves</h2>
     <p>Suppose agents produce work at some rate, a fraction of it needs a person to look before it goes out, and looking takes a while. The capacity of the whole operation is then bounded by:</p>
     <div class="math">$$N \;\le\; \frac{H}{f \cdot t}$$</div>
-    <p class="math-note">Human hours over review load. Agent throughput does not appear.</p>
-    <p>Where \(H\) is the hours a person has, \(f\) is the share of output needing their eyes, and \(t\) is how long each look takes. The rate at which agents generate work is absent from the right-hand side, which is the entire point. Once production has stopped being the constraint, making it cheaper again buys nothing at all. Three levers remain: hours, share and duration. Hours are the one that does not scale.</p>
-    <p>This is why “we can generate a thousand of these a day” is rarely the good news it sounds like. If each of the thousand needs four minutes of judgment, the operation ships about a hundred and twenty and the other eight hundred and eighty accumulate. The backlog is not a transitional state on the way to something better. It is the steady state.</p>
+    <p class="math-note">Human hours divided by how much needs reviewing. How fast the agents work doesn't come into it.</p>
+    <p>Where \(H\) is the hours a person has, \(f\) is the share of output needing their eyes, and \(t\) is how long each look takes. How fast agents produce work doesn't appear on the right-hand side at all, and that's the whole point. Once producing work has stopped being the bottleneck, making it cheaper again buys you nothing. That leaves three things you can change: the hours, the share and how long each look takes. Hours are the one that can't grow.</p>
+    <p>This is why “we can generate a thousand of these a day” is rarely the good news it sounds like. If each of those thousand needs four minutes of human judgment, you ship about a hundred and twenty and the other eight hundred and eighty pile up. That backlog isn't a phase you pass through on the way to something better. It's where you stay.</p>
 
-    <h2>Approve classes, not instances</h2>
-    <p>The first real lever is \(f\), and the way to move it is not to review faster. It is to change what the unit of approval is.</p>
-    <p>If every output is approved individually then \(f = 1\) by construction, and nothing done to \(t\) will save you. If instead a person approves a <em>kind</em> of output once, and agents produce instances inside it, then \(f\) collapses toward the rate at which new kinds appear rather than the rate at which instances do. A template, a policy, a set of bounds: approval becomes a fixed cost paid per class instead of a variable cost paid per unit.</p>
-    <p>This is the same move as deciding a product is <a href="/notes/software-that-finishes">finished</a>, an open-ended obligation converted into a bounded one. It fails the same way too, quietly, when new kinds keep getting introduced because nobody wants to be the one who says no to a reasonable request.</p>
+    <h2>Approve the template, not every result</h2>
+    <p>The first real lever is \(f\), and you don't move it by reviewing faster. You move it by changing what a person is approving.</p>
+    <p>If someone approves every output one by one, then \(f = 1\) whatever you do, and no amount of speeding up \(t\) will save you. If instead a person approves a <em>kind</em> of output once and agents produce the individual results inside it, then \(f\) drops to how often new kinds appear rather than how often results do. A template, a policy, a set of limits: approval becomes a one-off cost per kind instead of a cost you pay on every single item.</p>
+    <p>It's the same move as deciding a product is <a href="/notes/software-that-finishes">finished</a>: an open-ended commitment turned into a limited one. It fails the same way too, quietly, when new kinds keep getting added because nobody wants to be the person who says no to a reasonable request.</p>
 
-    <h2>Checks beat instructions</h2>
-    <p>The second lever is \(t\), and the reframing that helps is this: most review time is not spent judging. It is spent verifying. Confirming a claim is true, a number matches, a link resolves, a name is spelled the way the customer spells it. Verification is the part a person is worst at and least needed for.</p>
-    <p>An instruction not to invent facts reduces invented facts. A check that rejects any output containing a fact absent from the source eliminates them. The first is a prompt; the second is a program, and only the second lets you stop reading. Anything expressible as a check should be one, because each check removes a whole category of thing a person has to hold in their head while looking. What is left over is judgment: taste, tone, whether this should exist at all. Scarce hours belong there.</p>
+    <h2>Let programs do the checking</h2>
+    <p>The second lever is \(t\), and the thing to notice is that most review time isn't spent judging anything. It's spent checking: that a claim is true, that a number matches, that a link works, that a name is spelled the way the customer spells it. Checking is the part a person is worst at and least needed for.</p>
+    <p>Telling a model not to invent facts reduces invented facts. A program that rejects any output containing a fact that isn't in the source removes them. The first is a prompt, the second is code, and only the second lets you stop reading. Anything you can turn into a check should be one, because every check takes a whole category of thing off the list a person has to hold in their head. What's left is judgment: taste, tone, whether this should exist at all. That's where the scarce hours should go.</p>
 
-    <h2>Cheap mistakes, not correct ones</h2>
-    <p>The third lever is the one reached for last: lower the stakes rather than raise the accuracy.</p>
-    <p>Review exists in proportion to what a mistake costs. An action that can be undone in a click, that reaches one customer rather than ten thousand, that is staged before it is live, and that leaves a record of what happened and when, does not need the same gate as one that cannot be taken back. Reversibility is a design property, and it is usually cheaper to build than the accuracy that would justify skipping the gate without it.</p>
-    <p>The corollary deserves saying plainly. The genuinely irreversible actions stay gated permanently, however good the agents become: money leaving, contracts signed, messages sent to strangers, data deleted. Not because the agent will fail, but because the cost of the one time it does is unrecoverable, and the arithmetic on rare catastrophic events gets worse with volume, not better.</p>
+    <h2>Make mistakes cheap instead of rare</h2>
+    <p>The third lever is the one people reach for last: lower the stakes instead of raising the accuracy.</p>
+    <p>How much you review something depends on what a mistake costs. An action you can undo in one click, that reaches one customer instead of ten thousand, that gets staged before it goes live, and that leaves a record of what happened and when, doesn't need the same approval as one you can't take back. You can design for reversibility, and it's usually cheaper to build than the accuracy you'd need to skip the approval without it.</p>
+    <p>The other half is worth saying plainly. The genuinely irreversible actions stay behind a person forever, however good the agents get: money going out, contracts signed, messages sent to strangers, data deleted. Not because the agent will fail, but because the one time it does, you can't recover, and rare disasters get more likely as volume goes up, not less.</p>
 
-    <h2>What does not get cheaper</h2>
-    <p>None of this touches the parts of a business that were expensive before agents and remain so afterwards. Distribution is still rationed: inboxes, app stores and search results have gatekeepers who noticed that production got cheap and tightened accordingly. Trust is still earned slowly and lost quickly. Permission, meaning the legal right to contact someone, hold their data, or operate in their market, is still granted by institutions that do not care how the work was produced.</p>
-    <p>And liability still attaches to a person. An agent-first business is not an unowned one; something has to be a real entity, in a real jurisdiction, that can be invoiced and sued. The constraint clarifies more than it limits. It keeps the question honest. Not what can be automated, but what one is willing to put a name to at volume.</p>
+    <h2>What doesn't get cheaper</h2>
+    <p>None of this helps with the parts of a business that were expensive before agents and still are. Distribution is still rationed: inboxes, app stores and search results have gatekeepers who noticed that producing work got cheap and tightened up accordingly. Trust is still earned slowly and lost quickly. Permission, meaning the legal right to contact someone, hold their data or operate in their market, is still granted by institutions that don't care how the work was made.</p>
+    <p>And someone is still liable. An agent-first business isn't an unowned one. There has to be a real company, in a real country, that can be invoiced and sued. That requirement clarifies more than it restricts, because it keeps the question honest: not what can be automated, but what you are willing to put your name to a thousand times over.</p>
 
     <h2>How we build them at Flits</h2>
-    <p>Flits is a software lab that keeps what it builds. The products and ventures in the portfolio were developed here rather than assembled from outside, which makes the arithmetic above operational rather than theoretical. Every product added is one more thing that has to keep running without much standing behind it, and how many can exist at once is precisely the question above.</p>
-    <p>So the pattern is applied fairly literally. What gets approved are classes rather than instances: a template, a tone of voice, the claims a product is permitted to make, the range a price is allowed to move within. Agents produce the instances inside those bounds, and take most of the work that keeps a product alive after it ships. Where an output can be checked by a program it is, and the check is the gate rather than someone reading the result. What reaches a person is the residue that needs taste, or that costs too much to get wrong.</p>
-    <p>Everything irreversible stays with the <a href="/principal">principal</a>. Money leaving, anything signed, anything said to a stranger under the Flits name, anything touching a customer's data. Those are not bottlenecks to be engineered away. They are most of the reason there is a company here rather than a script.</p>
-    <p>What we are building now is run this way from the first day rather than automated afterwards, which in practice means deciding what the classes are before there is any volume to review. Deciding the classes first is slower, and it is the only version that holds up later. New ventures get announced when they are ready.</p>
+    <p>Flits is a software lab that keeps what it builds. We developed the products here rather than buying them in, which makes the sums above practical rather than theoretical. Every product we add is one more thing that has to keep running without many people behind it, and how many can exist at once is exactly the question above.</p>
+    <p>So we apply this fairly literally. We approve kinds of thing rather than individual results: a template, a tone of voice, the claims a product is allowed to make, how far a price can move. Agents produce the individual results inside those limits, and do most of the work of keeping a product alive after it ships. Anything a program can check gets checked that way, and the program decides rather than a person reading the result. What reaches a person is what's left: the parts that need taste, or that cost too much to get wrong.</p>
+    <p>Everything irreversible stays with the <a href="/principal">principal</a>: money going out, anything signed, anything said to someone outside the company in our name, anything touching a customer's data. We don't try to automate those away. They're most of the reason there's a company here rather than a script.</p>
+    <p>What we're building now runs this way from day one rather than being automated later, which means deciding what the kinds are before there's any volume to review at all. Doing it in that order is slower, and it's the only version that holds up later. We announce new ventures when they're ready.</p>
 
-    <h2>The shape of it</h2>
-    <p>An agent-first business is not fewer people doing more. It is a business deliberately arranged so that its human capacity goes to classes rather than instances, to judgment rather than verification, and to the small set of actions that genuinely cannot be undone. Everything else is either checked by a program or cheap enough to get wrong.</p>
-    <p>Arranged the other way, with agents everywhere and a person reviewing every result, you have not automated a business. You have automated your way into a queue, and hired yourself to work it.</p>
+    <h2>What it comes down to</h2>
+    <p>An agent-first business isn't fewer people doing more. It's a business arranged on purpose so that the human hours go to kinds rather than individual results, to judgment rather than checking, and to the small set of actions that genuinely can't be undone. Everything else is either checked by a program or cheap enough to get wrong.</p>
+    <p>Do it the other way round, with agents everywhere and a person reviewing every result, and you haven't automated a business. You've automated your way into a queue and hired yourself to work through it.</p>
   </article>
   </section>
 
@@ -216,7 +216,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="wordmark" href="/"><img src="/assets/flits-mark.png" alt="" width="10" height="18"><span>Flits</span></a>
-        <p>A software lab, building the companies that agents make possible. Est. 2023.</p>
+        <p>A software lab. We build the companies that agents make possible. Founded 2023.</p>
       </div>
       <div class="footer-col">
         <h2>Company</h2>

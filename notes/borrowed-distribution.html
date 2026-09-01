@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Borrowed Distribution · Flits</title>
-<meta name="description" content="Every consumer app is a tenant. What it costs to build on a channel somebody else owns, and why the rent is charged in years rather than percent.">
+<meta name="description" content="Every consumer app is a tenant. What it costs to build on a channel somebody else owns, and why the rent is charged in years rather than percentages.">
 <link rel="canonical" href="https://flits.so/notes/borrowed-distribution">
 <meta property="og:title" content="Borrowed Distribution · Flits">
-<meta property="og:description" content="Every consumer app is a tenant. What it costs to build on a channel somebody else owns, and why the rent is charged in years rather than percent.">
+<meta property="og:description" content="Every consumer app is a tenant. What it costs to build on a channel somebody else owns, and why the rent is charged in years rather than percentages.">
 <meta property="og:url" content="https://flits.so/notes/borrowed-distribution">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Flits">
@@ -17,7 +17,7 @@
 <meta property="og:image:alt" content="Flits, a software lab. Building the companies that agents make possible.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Borrowed Distribution · Flits">
-<meta name="twitter:description" content="Every consumer app is a tenant. What it costs to build on a channel somebody else owns, and why the rent is charged in years rather than percent.">
+<meta name="twitter:description" content="Every consumer app is a tenant. What it costs to build on a channel somebody else owns, and why the rent is charged in years rather than percentages.">
 <meta name="twitter:image" content="https://flits.so/assets/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
       "@type": "BlogPosting",
       "headline": "Borrowed Distribution",
       "datePublished": "2023-11-01",
-      "description": "Every consumer app is a tenant. What it costs to build on a channel somebody else owns, and why the rent is charged in years rather than percent.",
+      "description": "Every consumer app is a tenant. What it costs to build on a channel somebody else owns, and why the rent is charged in years rather than percentages.",
       "url": "https://flits.so/notes/borrowed-distribution",
       "mainEntityOfPage": "https://flits.so/notes/borrowed-distribution",
       "author": {
@@ -126,7 +126,7 @@
     <div class="page-hero__inner">
       <p class="eyebrow"><strong>Note</strong> <span>November 2023</span></p>
       <h1 class="h1">Borrowed Distribution</h1>
-      <p class="lede">Every consumer app is a tenant. What it costs to build on a channel somebody else owns, and why the rent is charged in years rather than percent.</p>
+      <p class="lede">Every consumer app is a tenant. What it costs to build on a channel somebody else owns, and why the rent is charged in years rather than percentages.</p>
     </div>
   </section>
 
@@ -140,14 +140,14 @@
 
   <section class="wrap section--tight">
   <article class="prose">
-    <p>The first thing anyone notices about the App Store is the thirty percent. It is the wrong number to worry about. Thirty percent is a price, it is written down, and you can decide in advance whether the remaining seventy is a business. What is not written down anywhere is the rest of the arrangement: that the shelf, the search results, the payment relationship and the right to be installed at all belong to somebody else, and are lent to you on terms that can be rewritten without your agreement.</p>
-    <p>None of this is a complaint. The alternative, building your own distribution from nothing, is so much more expensive that almost nobody starting out should choose it. It is simply worth being honest that what looks like owning a product is often renting a channel, and that the rent is not really charged as a percentage. It is charged in the probability that the terms change.</p>
+    <p>The first thing anyone notices about the App Store is the thirty percent, and it's the wrong number to worry about. Thirty percent is a price. It's written down, and you can work out in advance whether the other seventy adds up to a business. What isn't written down anywhere is the rest of the deal: the shelf, the search results, the payment relationship and the right to be installed at all belong to someone else, and they're lent to you on terms that can be rewritten without asking you.</p>
+    <p>None of this is a complaint. The alternative, building your own distribution from nothing, costs so much more that almost nobody starting out should choose it. It's just worth being honest that what looks like owning a product is often renting a channel, and that the rent isn't really charged as a percentage. It's charged as the chance that the terms change.</p>
 
     <h2>What dependence actually costs</h2>
     <p>Suppose in any given year there is some chance that the channel you depend on does something that materially hurts: a ranking change, a policy that outlaws a feature you built on, a review process that suddenly reads your category differently, a competing first-party app shipped in the operating system. Call that probability \(q\). The chance of getting through \(t\) years untouched is:</p>
     <div class="math">$$P(\text{survive } t) \;=\; (1-q)^{t}$$</div>
-    <p class="math-note">A small annual risk is not a small risk once it is compounded over a decade.</p>
-    <p>The numbers are unkind. At a ten percent annual chance, a decade of dependence carries roughly a thirty-five percent chance of arriving intact. At twenty percent, which is not unrealistic for anything sitting close to a platform's own ambitions, it is about eleven. Nothing has to go badly wrong in a particular year for the tail to be thin. It just has to be possible every year.</p>
+    <p class="math-note">A small yearly risk stops being small once you run it for a decade.</p>
+    <p>The numbers are unkind. At a ten percent chance each year, ten years of depending on a channel leaves you roughly a thirty-five percent chance of coming through untouched. At twenty percent, which is realistic for anything sitting close to what the platform wants to do itself, it's about eleven. Nothing has to actually go wrong in any particular year. It only has to be possible every year.</p>
     <figure class="chart">
       <script type="application/json">
       {
@@ -331,16 +331,16 @@
       <figcaption>The curve is the whole argument. Nothing has to go badly wrong in any
       particular year for the ten-year tail to be thin.</figcaption>
     </figure>
-    <p>Two things follow. The first is that channel risk is a property of duration, so it changes the kind of product worth building, not merely the marketing. A product that has to run for ten years to be worth building is a different bet than the same product with a payback measured in months. The second is that \(q\) is not fixed. It rises the closer you sit to whatever the platform intends to do itself, and falls the more boring and self-contained your product is. Being uninteresting to your landlord is a real form of insurance.</p>
+    <p>Two things follow. First, this risk grows with time, so it changes what kind of product is worth building, not just how you market it. A product that needs ten years to pay off is a very different bet from the same product that pays back in months. Second, \(q\) isn't fixed. It goes up the closer you sit to what the platform wants to do itself, and down the more boring and self-contained your product is. Being uninteresting to your landlord is a real form of insurance.</p>
 
     <h2>Rent paid in permission</h2>
-    <p>The part that costs most is rarely the money. It is that permission has to be asked for repeatedly, and the asking has a variance you do not control. A release can sit in review while a launch date passes. A feature can be approved for two years and then not. The correct response is not indignation, it is inventory: knowing which parts of your product exist at somebody else's discretion, and not letting that set grow quietly.</p>
-    <p>So we try to keep a small number of things ours regardless of what any platform decides. Whoever the customer is, and a way to reach them that does not route through a store. The domain, so that an address we have published for years keeps working. The data, in a form that can leave. A product built to run at <a href="/notes/what-free-costs">near-zero marginal cost</a> is easier to hold this way, because less of it was living on somebody else's machine to begin with. None of that produces growth on its own. All of it means a bad month is a bad month rather than the end.</p>
+    <p>The part that costs most is rarely the money. It's that you have to keep asking permission, and how long the asking takes isn't up to you. A release can sit in review while your launch date goes past. A feature can be approved for two years and then not be. The right response isn't outrage, it's a list: know which parts of your product exist at someone else's discretion, and don't let that list grow without noticing.</p>
+    <p>So we try to keep a few things ours whatever any platform decides. We keep the customer relationship, and a way to reach people that doesn't go through a store. We keep the domain, so an address we've published for years keeps working. We keep the data in a form that can be moved. A product built to run at <a href="/notes/what-free-costs">almost no cost per user</a> is easier to hold onto this way, because less of it was living on someone else's machine to start with. None of that grows the business on its own. What it does mean is that a bad month is just a bad month rather than the end.</p>
 
     <h2>The version of this we believe</h2>
-    <p>Borrowed distribution is worth borrowing. It is the reason one person can put something in front of millions of people without a sales team, and dismissing it as a trap is the kind of purity that produces no users at all. The mistake is not using the channel. The mistake is building as though the channel were an asset you hold rather than one you rent, and then being surprised when the terms change.</p>
-    <p>Practically, that means a few unexciting rules. Assume the channel changes at least once in any decade, and check that the product still means something if it does. Do not build a core mechanic on a permission that is granted by policy rather than by physics. Keep the direct relationship, even when it is smaller and slower than the borrowed one, because it is the part that survives.</p>
-    <p>The way to think about it is that distribution you borrow buys you time, and time is exactly the thing you should be spending on building something you own. Companies that forget the second half of that sentence do very well for a while, and then discover that everything they built was standing on ground rented by the year.</p>
+    <p>Borrowed distribution is worth borrowing. It's the reason one person can put something in front of millions of people without a sales team, and writing it off as a trap is the kind of purity that gets you no users at all. The mistake isn't using the channel. The mistake is building as though you own it rather than rent it, and then being surprised when the terms change.</p>
+    <p>In practice that means a few dull rules. Assume the channel will change at least once in any ten years, and check that the product still makes sense if it does. Don't build anything central on a permission that a policy grants and a policy can take away. Keep the direct relationship with customers, even when it's smaller and slower than the borrowed one, because it's the part that survives.</p>
+    <p>The way to think about it is that borrowed distribution buys you time, and time is exactly what you should spend on building something you own. Companies that forget the second half of that sentence do very well for a while, and then find that everything they built was standing on ground they rented by the year.</p>
   </article>
   </section>
 
@@ -381,7 +381,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="wordmark" href="/"><img src="/assets/flits-mark.png" alt="" width="10" height="18"><span>Flits</span></a>
-        <p>A software lab, building the companies that agents make possible. Est. 2023.</p>
+        <p>A software lab. We build the companies that agents make possible. Founded 2023.</p>
       </div>
       <div class="footer-col">
         <h2>Company</h2>
