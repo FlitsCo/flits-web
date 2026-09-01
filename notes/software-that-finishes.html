@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Software That Finishes · Flits</title>
-<meta name="description" content="Most software is never allowed to be done. What changes when finishing is the goal rather than the failure state.">
+<meta name="description" content="Most software is never allowed to be done. What changes when finishing something is the goal rather than a sign of failure.">
 <link rel="canonical" href="https://flits.so/notes/software-that-finishes">
 <meta property="og:title" content="Software That Finishes · Flits">
-<meta property="og:description" content="Most software is never allowed to be done. What changes when finishing is the goal rather than the failure state.">
+<meta property="og:description" content="Most software is never allowed to be done. What changes when finishing something is the goal rather than a sign of failure.">
 <meta property="og:url" content="https://flits.so/notes/software-that-finishes">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Flits">
@@ -17,12 +17,12 @@
 <meta property="og:image:alt" content="Flits, a software lab. Building the companies that agents make possible.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Software That Finishes · Flits">
-<meta name="twitter:description" content="Most software is never allowed to be done. What changes when finishing is the goal rather than the failure state.">
+<meta name="twitter:description" content="Most software is never allowed to be done. What changes when finishing something is the goal rather than a sign of failure.">
 <meta name="twitter:image" content="https://flits.so/assets/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/flits.css?v=15">
+<link rel="stylesheet" href="/assets/flits.css?v=16">
 <script src="/assets/theme-color.js?v=1"></script>
 <link rel="stylesheet" href="/assets/katex/katex.min.css">
 <link rel="icon" type="image/png" href="/assets/flits-logo-inverted.png">
@@ -36,7 +36,7 @@
       "@type": "BlogPosting",
       "headline": "Software That Finishes",
       "datePublished": "2026-08-01",
-      "description": "Most software is never allowed to be done. What changes when finishing is the goal rather than the failure state.",
+      "description": "Most software is never allowed to be done. What changes when finishing something is the goal rather than a sign of failure.",
       "url": "https://flits.so/notes/software-that-finishes",
       "mainEntityOfPage": "https://flits.so/notes/software-that-finishes",
       "author": {
@@ -125,7 +125,7 @@
     <div class="page-hero__inner">
       <p class="eyebrow"><strong>Note</strong> <span>August 2026</span></p>
       <h1 class="h1">Software That Finishes</h1>
-      <p class="lede">Most software is never allowed to be done. What changes when finishing is the goal rather than the failure state.</p>
+      <p class="lede">Most software is never allowed to be done. What changes when finishing something is the goal rather than a sign of failure.</p>
     </div>
   </section>
 
@@ -139,27 +139,27 @@
 
   <section class="wrap section--tight">
   <article class="prose">
-    <p>A product that stops changing is usually read as a product that stopped mattering. The roadmap goes quiet, the changelog thins out, and someone eventually asks whether the thing is still maintained. We have started answering yes, and nothing is planned, and meaning it.</p>
-    <p>The assumption underneath the question is that software is a service rendered continuously: a tool has to keep arriving to keep being worth something. For a certain kind of product that is true. For most of what we build, it is a habit borrowed from companies with growth expectations we do not have.</p>
+    <p>When a product stops changing, people assume it stopped mattering. The roadmap goes quiet, the changelog thins out, and eventually someone asks whether it's still maintained. We've started answering yes, and nothing is planned, and meaning it.</p>
+    <p>Behind that question is an assumption that software is a service you deliver continuously, and that a tool has to keep changing to stay worth anything. For some products that's true. For most of what we build, it's a habit borrowed from companies that are expected to grow in ways we aren't.</p>
 
     <h2>What each feature costs after it ships</h2>
-    <p>The build cost of a feature is the part you can see and the part that ends. The part that does not end is the surface it adds to everything already there. Every new capability has to keep working alongside every old one, across upgrades nobody asked for.</p>
+    <p>What it costs to build a feature is the part you can see, and it's also the part that ends. What doesn't end is everything that feature now touches. Each new thing the product does has to keep working alongside everything it already did, through upgrades nobody asked for.</p>
     <div class="math">$$\begin{aligned}
 \text{build} \;&\propto\; n \\[2pt]
 \text{carry} \;&\propto\; \tbinom{n}{2} \;=\; \frac{n(n-1)}{2}
 \end{aligned}$$</div>
-    <p class="math-note">Building is linear in features. Carrying them is not.</p>
-    <p>Where \(n\) is the number of things the product does. Shipping the tenth feature costs about what the ninth did; carrying it costs roughly nine new interactions, each of which can break, confuse, or need a migration. Doubling the surface roughly quadruples what has to keep holding together.</p>
-    <p>This is the arithmetic behind a familiar shape: a small team ships quickly for two years, then slows to a crawl without anyone doing anything wrong. Nobody got worse. The carry got larger than the capacity, and every hour now goes to keeping the existing thing upright.</p>
+    <p class="math-note">Building features adds up in a straight line. Maintaining them doesn't.</p>
+    <p>Where \(n\) is the number of things the product does. Shipping the tenth feature costs about what the ninth did. Maintaining it costs you nine new interactions, any of which can break, confuse someone, or need a migration. Double what the product does and you roughly quadruple what has to keep holding together.</p>
+    <p>This is the maths behind a pattern most people recognise: a small team ships quickly for two years, then slows to a crawl without anyone doing anything wrong. Nobody got worse at their job. The maintenance simply grew bigger than the team, and now every hour goes on keeping what already exists standing up.</p>
 
-    <h2>Finished is not abandoned</h2>
-    <p>A finished product still gets security patches, still gets fixed when a dependency moves underneath it, still gets answered when someone writes in. What it does not get is new scope. The distinction matters because the two are constantly confused, usually by the person proposing the new scope.</p>
-    <p>Deciding a product is finished is a decision about \(n\), and it is worth making explicitly rather than discovering by exhaustion. It converts an open-ended obligation into a bounded one: a known, small annual cost to keep something working, against however long it stays useful. The same trade appeals to us in a <a href="/notes/domains-as-options">domain</a>, and the same reason the <a href="/notes/founding-flits">holding structure</a> suits us. Bounded cost, unbounded duration.</p>
+    <h2>Finished isn't abandoned</h2>
+    <p>A finished product still gets security patches, still gets fixed when a dependency moves underneath it, still gets answered when someone writes in. What it doesn't get is new features. That difference matters, because people mix the two up constantly, usually the person asking for the new feature.</p>
+    <p>Deciding that a product is finished is a decision about \(n\), and it's worth making on purpose rather than discovering it when you run out of energy. It turns an open-ended commitment into a limited one: a small, known yearly cost to keep something working, for as long as it stays useful. It's the same trade we like in a <a href="/notes/domains-as-options">domain</a>, and the same reason the <a href="/notes/founding-flits">holding company</a> suits us. The cost is capped and the time isn't.</p>
 
     <h2>How we decide</h2>
-    <p>We ask two questions of a proposed feature. Does the product fail at its stated job without it? And would we still want it in the codebase in five years, when whoever asked for it has moved on? A request has to survive both. Most survive neither. They are real requests from real users that happen to describe a different product than the one we built.</p>
-    <p>Saying no to those is not discipline so much as arithmetic. Every yes is a permanent addition to the carry, paid by a team that stays small on purpose.</p>
-    <p>The products we are proudest of holding are the ones we have not touched in a year and that still do exactly what they did when we stopped. They earn quietly, need almost nothing, and have never once appeared in a planning meeting. In a portfolio meant to be held for a decade, those are the ones carrying everything else.</p>
+    <p>We ask two questions of a proposed feature. Does the product fail at its stated job without it? And would we still want it in the codebase in five years, when whoever asked for it has moved on? A request has to pass both. Most pass neither. They're genuine requests from real users, but they describe a different product from the one we built.</p>
+    <p>Saying no to those isn't really discipline, it's just arithmetic. Every yes adds permanently to the maintenance, and the team that stays small on purpose is the one who pays for it.</p>
+    <p>The products we're proudest of are the ones we haven't touched in a year and that still do exactly what they did when we stopped. They earn quietly, need almost nothing, and have never once come up in a planning meeting. In a portfolio we mean to hold for a decade, those are the ones carrying everything else.</p>
   </article>
   </section>
 
@@ -200,7 +200,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="wordmark" href="/"><img src="/assets/flits-mark.png" alt="" width="10" height="18"><span>Flits</span></a>
-        <p>A software lab, building the companies that agents make possible. Est. 2023.</p>
+        <p>A software lab. We build the companies that agents make possible. Founded 2023.</p>
       </div>
       <div class="footer-col">
         <h2>Company</h2>

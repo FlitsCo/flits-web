@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>What Free Costs · Flits</title>
-<meta name="description" content="A free product still has a bill. Support and servers scale with installs while revenue per user stays at zero, so growth steepens the line instead of bending it.">
+<meta name="description" content="A free product still has a bill. Support and servers grow with every install while revenue per user stays at zero, so growing makes the problem worse rather than better.">
 <link rel="canonical" href="https://flits.so/notes/what-free-costs">
 <meta property="og:title" content="What Free Costs · Flits">
-<meta property="og:description" content="A free product still has a bill. Support and servers scale with installs while revenue per user stays at zero, so growth steepens the line instead of bending it.">
+<meta property="og:description" content="A free product still has a bill. Support and servers grow with every install while revenue per user stays at zero, so growing makes the problem worse rather than better.">
 <meta property="og:url" content="https://flits.so/notes/what-free-costs">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Flits">
@@ -17,12 +17,12 @@
 <meta property="og:image:alt" content="Flits, a software lab. Building the companies that agents make possible.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="What Free Costs · Flits">
-<meta name="twitter:description" content="A free product still has a bill. Support and servers scale with installs while revenue per user stays at zero, so growth steepens the line instead of bending it.">
+<meta name="twitter:description" content="A free product still has a bill. Support and servers grow with every install while revenue per user stays at zero, so growing makes the problem worse rather than better.">
 <meta name="twitter:image" content="https://flits.so/assets/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/flits.css?v=15">
+<link rel="stylesheet" href="/assets/flits.css?v=16">
 <script src="/assets/theme-color.js?v=1"></script>
 <link rel="stylesheet" href="/assets/katex/katex.min.css">
 <link rel="icon" type="image/png" href="/assets/flits-logo-inverted.png">
@@ -36,7 +36,7 @@
       "@type": "BlogPosting",
       "headline": "What Free Costs",
       "datePublished": "2023-07-01",
-      "description": "A free product still has a bill. Support and servers scale with installs while revenue per user stays at zero, so growth steepens the line instead of bending it.",
+      "description": "A free product still has a bill. Support and servers grow with every install while revenue per user stays at zero, so growing makes the problem worse rather than better.",
       "url": "https://flits.so/notes/what-free-costs",
       "mainEntityOfPage": "https://flits.so/notes/what-free-costs",
       "author": {
@@ -125,7 +125,7 @@
     <div class="page-hero__inner">
       <p class="eyebrow"><strong>Note</strong> <span>July 2023</span></p>
       <h1 class="h1">What Free Costs</h1>
-      <p class="lede">A free product still has a bill. Support and servers scale with installs while revenue per user stays at zero, so growth steepens the line instead of bending it.</p>
+      <p class="lede">A free product still has a bill. Support and servers grow with every install while revenue per user stays at zero, so growing makes the problem worse rather than better.</p>
     </div>
   </section>
 
@@ -139,28 +139,28 @@
 
   <section class="wrap section--tight">
   <article class="prose">
-    <p>Free is chosen more often than it is decided. It is the default for a first app, it removes the most obvious reason someone will not try the thing, and it postpones an uncomfortable conversation about whether the work is worth money. All of that is real. What gets skipped is that free is a price, that it sets one side of the arithmetic to zero, and that the other side keeps running.</p>
-    <p>The bill arrives anyway. It is simply itemised somewhere other than the invoice: a support inbox, a server that has to stay up, an annual developer fee, and the hours that go into all three.</p>
+    <p>Most people drift into free rather than choosing it. It's the default for a first app, it removes the most obvious reason not to try something, and it puts off an awkward conversation about whether the work is worth paying for. All of that is true. What gets missed is that free is still a price. It sets one side of the sum to zero, and the other side keeps running.</p>
+    <p>The bill still arrives. It just turns up somewhere other than an invoice: a support inbox, a server that has to stay up, a yearly developer fee, and the hours that go into all three.</p>
 
-    <h2>The slope, not the level</h2>
+    <h2>Growth only helps if the maths works</h2>
     <p>Take a product with \(u\) active users, some revenue \(r\) per user per month, some marginal cost \(c\) per user per month, and fixed costs \(f\) that exist whether anyone shows up or not. Monthly profit is:</p>
     <div class="math">$$\Pi(u) \;=\; (r - c)\,u \;-\; f$$</div>
-    <p class="math-note">Growth helps only when the bracket is positive.</p>
-    <p>The bracket decides everything, and it decides it before the first user arrives. If \(r &gt; c\), scale is the answer to almost any problem: every new user pays for themselves and contributes toward \(f\), and the whole thing eventually crosses into profit on its own. If \(r &lt; c\), scale is the problem. Growth does not bend that line upward, it makes it steeper downward, and the more successful the product is the faster it gets there.</p>
-    <p>Free is the decision to set \(r = 0\). Zero revenue does not make the bracket zero, it makes it \(-c\). Whatever \(c\) is, the product now loses that much per user per month, forever, and the reward for good marketing is a larger number.</p>
+    <p class="math-note">Growing only helps if the bracket is positive.</p>
+    <p>The bracket decides everything, and it decides it before the first user arrives. If \(r &gt; c\), scale is the answer to almost any problem: every new user pays for themselves and contributes toward \(f\), and the whole thing eventually crosses into profit on its own. If \(r &lt; c\), scale is the problem. Growth doesn't bend that line upward. It makes it fall faster, and the more successful the product is, the quicker you get there.</p>
+    <p>Choosing free means setting \(r = 0\). Zero revenue doesn't make the bracket zero. It makes it \(-c\). Whatever \(c\) is, the product now loses that much per user per month, forever, and the reward for good marketing is a bigger number.</p>
 
-    <h2>Support is the term that bites</h2>
+    <h2>Support is the cost that grows</h2>
     <p>Servers are the cost people plan for and usually the smaller one. At a fraction of a cent per user per month, fifty thousand people cost less to host than a modest dinner. The term that actually scales is the human one.</p>
     <p>Suppose one user in five hundred writes in during a given month, which is not pessimistic for a consumer app, and each message takes ten minutes to read, reproduce and answer properly. Fifty thousand active users is then a hundred messages a month, or about seventeen hours. Seventeen hours is half a working week, arriving every month whether or not anything was earned, and it grows in exact proportion to how well the product is doing.</p>
-    <p>The uncomfortable part is that this cost cannot be refused without changing what the product is. Ignoring the inbox is a decision to ship something unsupported, and doing that at scale is how a free app becomes a slowly accumulating liability rather than a portfolio piece.</p>
+    <p>The awkward part is that you can't avoid this cost without changing what the product is. Ignoring the inbox means shipping something unsupported, and doing that at scale is how a free app turns into a growing liability instead of something worth owning.</p>
 
     <h2>Being free on purpose</h2>
-    <p>None of this is an argument against free. It is an argument for choosing which kind of free, of which there are only three honest versions.</p>
-    <p>The first is free as a funnel, where \(r\) is zero now and deliberately not later. That works, but only if the paid thing exists and the path to it is real rather than aspirational.</p>
-    <p>The second is free with someone else paying, through advertising or data. That sets \(r &gt; 0\) at the cost of building a product whose customer is not its user, which is a different company than the one we want to run.</p>
-    <p>The third is the one we keep choosing: free with \(c\) driven as close to zero as the product allows. No accounts, so there is nothing to reset. No server holding user data, so there is nothing to keep up and nothing to leak. Work that happens on the device, so the marginal cost of one more install is genuinely almost nothing. Then \(-c\) is small enough that scale is affordable, and a free product can sit in the portfolio for years without asking for anything.</p>
-    <p>The constraint shapes the software more than any design decision does. A product that must run at near-zero marginal cost cannot have a sync service, cannot have a feed, cannot have anything that phones home constantly. It has to be self-contained, which happens to also make it faster, more private and cheaper to keep alive.</p>
-    <p>So the question to answer before choosing free is not whether people will pay. It is what \(c\) is, honestly, including the hours. If it is small, free is a real option and possibly a permanent one. If it is not, you have a deficit with a growth strategy attached, and the fix arrives years later at a price the product could have charged from the start.</p>
+    <p>None of this is an argument against free. It's an argument for deciding which kind of free you mean, and there are only three honest versions.</p>
+    <p>The first is free as a funnel, where \(r\) is zero now and deliberately not later. That works, but only if the paid product actually exists and the route to it is real rather than wishful.</p>
+    <p>The second is free with someone else paying, through advertising or data. That gets \(r &gt; 0\), but it means building a product whose customer isn't its user, and that's a different company from the one we want to run.</p>
+    <p>The third is the one we keep choosing: free with \(c\) driven as close to zero as the product allows. No accounts, so there's nothing to reset. No server holding user data, so there's nothing to keep running and nothing to leak. The work happens on the device, so one more install really does cost almost nothing. Then \(-c\) is small enough that scale is affordable, and a free product can sit in the portfolio for years without asking for anything.</p>
+    <p>That constraint shapes the software more than any design decision does. A product that has to run at almost no cost per user can't have a sync service, can't have a feed, can't have anything that phones home constantly. It has to be self-contained, which also makes it faster, more private and cheaper to keep alive.</p>
+    <p>So the question to answer before choosing free isn't whether people will pay. It's what \(c\) really is, hours included. If it's small, free is a real option and maybe a permanent one. If it isn't, what you have is a loss that grows as you grow, and the fix arrives years later at a price you could have charged from the start.</p>
   </article>
   </section>
 
@@ -201,7 +201,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="wordmark" href="/"><img src="/assets/flits-mark.png" alt="" width="10" height="18"><span>Flits</span></a>
-        <p>A software lab, building the companies that agents make possible. Est. 2023.</p>
+        <p>A software lab. We build the companies that agents make possible. Founded 2023.</p>
       </div>
       <div class="footer-col">
         <h2>Company</h2>
