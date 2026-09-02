@@ -3,33 +3,115 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "n.flits.so"
+        }
+      ],
+      "destination": "https://flits.so/",
+      "permanent": false
+    },
+    {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.flits.so" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.flits.so"
+        }
+      ],
       "destination": "https://flits.so/:path*",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "flits.cc" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "flits.cc"
+        }
+      ],
       "destination": "https://flits.so/:path*",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.flits.cc" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.flits.cc"
+        }
+      ],
       "destination": "https://flits.so/:path*",
       "permanent": true
     },
-    { "source": "/pages/:path*", "destination": "/:path*", "permanent": true },
-    { "source": "/Flits.html", "destination": "/", "permanent": true },
-    { "source": "/Flits", "destination": "/", "permanent": true },
-    { "source": "/imprint", "destination": "/legal", "permanent": true },
-    { "source": "/imprint.html", "destination": "/legal", "permanent": true },
-    { "source": "/ventures", "destination": "/", "permanent": false },
-    { "source": "/index-ventures", "destination": "/", "permanent": false },
-    { "source": "/thesis", "destination": "/", "permanent": false },
-    { "source": "/contact", "destination": "/", "permanent": false },
-    { "source": "/support", "destination": "/", "permanent": false },
-    { "source": "/zh", "destination": "/", "permanent": false }
+    {
+      "source": "/pages/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/Flits.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/Flits",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/imprint",
+      "destination": "/legal",
+      "permanent": true
+    },
+    {
+      "source": "/imprint.html",
+      "destination": "/legal",
+      "permanent": true
+    },
+    {
+      "source": "/ventures",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/index-ventures",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/thesis",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/contact",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/support",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/zh",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/:slug",
+      "has": [
+        {
+          "type": "host",
+          "value": "n.flits.so"
+        }
+      ],
+      "destination": "/api/sources?slug=:slug"
+    }
   ]
 }
